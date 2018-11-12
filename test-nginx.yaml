@@ -1,0 +1,12 @@
+version: "3.3"
+
+services:
+  traefik:
+    image: nginx
+    deploy:
+      labels:
+        com.docker.ucp.access.label: /nix
+        edu.wm.restartService.schedule: "@every 1m"
+      placement:
+        constraints:
+          - node.role == manager
