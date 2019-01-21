@@ -1,0 +1,14 @@
+version: "3.3"
+
+services:
+  service-restarter:
+    image: pcfens/swarm-service-restarter
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+    volumes:
+      - type: bind
+        source: /var/run/docker.sock
+        target: /var/run/docker.sock
+        read_only: false
