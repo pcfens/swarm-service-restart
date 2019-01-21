@@ -128,7 +128,7 @@ func restartService(ServiceID string) {
 	}
 
 	currentSpec := service.Spec
-	currentSpec.TaskTemplate.ForceUpdate = 1
+	currentSpec.TaskTemplate.ForceUpdate++
 
 	_, err = cli.ServiceUpdate(context.Background(), ServiceID, service.Meta.Version, currentSpec, types.ServiceUpdateOptions{QueryRegistry: false})
 	if err != nil {
