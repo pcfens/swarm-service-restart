@@ -31,7 +31,7 @@ version: "3.7"
 
 services:
   service-restarter:
-    image: pcfens/swarm-service-restarter
+    image: pcfens/swarm-service-restart
     deploy:
       placement:
         constraints:
